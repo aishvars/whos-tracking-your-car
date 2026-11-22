@@ -1,14 +1,59 @@
 .page-narrow { max-width: 56rem; }
 .action-hero { padding-block: 3rem 1rem; }
-.action-hero .lead { max-width: 50rem; }
+.action-hero .lead { max-width: 70rem; }
 
-.action-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-block: 1.5rem 3rem; }
-.action-card { display: flex; flex-direction: column; gap: 0.25rem; }
-.action-card h2 { font-size: 1.45rem; margin-bottom: 0.5rem; }
-.action-card p { max-width: 38rem; }
+.action-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-block: 1.5rem 2.5rem; }
+.action-card {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  padding: 1.5rem 1.75rem 1.6rem; border-top: 4px solid var(--accent);
+}
+.action-card h2 { font-size: 1.5rem; margin-bottom: 0.35rem; }
+.action-card p { max-width: none; margin-bottom: 0.6rem; }
 .action-card .btn-row { margin-top: auto; padding-top: 0.75rem; }
+.action-num {
+  margin: 0 0 0.25rem; width: 2.4rem; height: 2.4rem; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 800; font-size: 1.15rem; color: var(--accent-ink); background: var(--accent);
+}
+.action-wide { grid-column: 1 / -1; }
+
+/* Card 3: the general rule on the left, the Pittsburgh specifics on the right */
+.action-cols { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+.action-col .btn-row { margin-top: 0.5rem; }
+.action-side { padding: 1.1rem 1.4rem 0.9rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); }
+.action-side h3 { margin: 0 0 0.6rem; font-family: var(--font-body); font-size: 1.1rem; color: var(--accent); }
+.check-list { list-style: none; margin: 0; padding: 0; }
+.check-list li { position: relative; padding: 0.4rem 0 0.4rem 1.8rem; line-height: 1.5; }
+.check-list li::before {
+  content: ""; position: absolute; left: 0.1rem; top: 0.85rem; width: 0.55rem; height: 0.55rem;
+  border-radius: 50%; background: var(--accent);
+}
+
+/* Card 4: a slim banner, so a short card looks deliberate */
+.action-banner { flex-direction: row; align-items: center; gap: 1.5rem; padding-block: 1.25rem; }
+.action-banner .action-num { margin: 0; flex: none; }
+.banner-text { flex: 1; min-width: 0; }
+.banner-text h2 { margin-bottom: 0.25rem; }
+.banner-text p { margin: 0; }
+.action-banner .btn-row { margin: 0; padding: 0; flex: none; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .suggest { color: var(--muted); font-size: 1rem; }
+
+/* Right-to-Know timeline on the Take action page */
+.timeline-card { margin-block: 0 1rem; padding: 1.75rem 2rem 1.5rem; scroll-margin-top: 90px; }
+.timeline-card h2 { font-size: 1.75rem; margin-bottom: 1.25rem; }
+.timeline { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.timeline li {
+  counter-increment: step; position: relative; padding: 0 0 1.5rem 4rem; max-width: none; line-height: 1.6;
+}
+.timeline li:last-child { padding-bottom: 0.25rem; }
+.timeline li::before {
+  content: counter(step); position: absolute; left: 0; top: 0; width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  display: grid; place-items: center; font-weight: 800; color: var(--accent-ink); background: var(--accent);
+}
+.timeline li:not(:last-child)::after {
+  content: ""; position: absolute; left: 1.2rem; top: 2.8rem; bottom: 0.2rem; width: 2px; background: var(--border);
+}
+.tl-label { display: block; margin-bottom: 0.15rem; font-family: var(--font-display); font-size: 1.25rem; color: var(--text); }
 
 .after-filing { max-width: 52rem; margin-bottom: 3rem; }
 .after-filing ol { padding-left: 1.4rem; }
@@ -35,5 +80,6 @@
 .tool-status { color: var(--accent); min-height: 1.5em; margin: 0.5rem 0 0; font-size: 1rem; }
 
 @media (max-width: 1000px) {
-  .action-grid, .tool-layout { grid-template-columns: 1fr; }
+  .action-grid, .tool-layout, .action-cols { grid-template-columns: 1fr; }
+  .action-banner { flex-direction: column; align-items: flex-start; }
 }
