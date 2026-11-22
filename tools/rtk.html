@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Right-to-Know request | Who's Tracking Your Car?</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/actions.css">
+  <link rel="stylesheet" href="../assets/css/citations.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <header class="container action-hero">
+      <p class="eyebrow"><a href="../take-action.html">Take action</a> / Tool</p>
+      <h1>Right-to-Know request</h1>
+      <p class="lead">Ask your local agency for its records about license plate readers. Fill in the boxes, copy the text, and follow the steps below. Everything stays in your browser: nothing you type is sent or saved.</p>
+    </header>
+
+    <div class="container">
+      <div class="tool-layout">
+        <form id="tool-form" class="tool-form" autocomplete="off">
+          <label for="r-agency">Agency</label>
+          <input id="r-agency" type="text" placeholder="e.g. City of Pittsburgh">
+          <button type="button" class="btn btn-secondary btn-small" id="use-pittsburgh" style="margin-top:0.4rem">Use City of Pittsburgh</button>
+          <label for="r-name">Your name</label>
+          <input id="r-name" type="text" placeholder="Your full name">
+          <label for="r-address">Your physical address</label>
+          <input id="r-address" type="text" placeholder="Street, city, ZIP (no P.O. box)">
+          <label for="r-email">Your email (optional)</label>
+          <input id="r-email" type="email" placeholder="you@example.org">
+          <p class="note" style="margin-top:0.9rem">The six requests ask for records, not answers, and avoid individual plate data and records about specific investigations, which the law lets agencies withhold.<sup class="fn"><a href="#src-12">12</a></sup></p>
+        </form>
+
+        <div class="preview-box">
+          <h2 id="preview-title">Your request</h2>
+          <textarea id="preview" class="preview" readonly aria-labelledby="preview-title"></textarea>
+          <div class="tool-actions">
+            <button type="button" class="btn" id="copy-btn">Copy request</button>
+          </div>
+          <p class="tool-status" id="tool-status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <section class="after-filing" aria-labelledby="before-send-title">
+        <h2 id="before-send-title">Before you send it</h2>
+        <ol>
+          <li><strong>Find the right officer.</strong> Every local and state agency must have an Open Records Officer. Look on the agency&rsquo;s website, or search the Office of Open Records&rsquo; <a href="https://www.openrecords.pa.gov/RTKL/AOROSearch.cfm" target="_blank" rel="noopener">directory</a>.<sup class="fn"><a href="#src-11">11</a></sup></li>
+          <li><strong>City of Pittsburgh.</strong> Requests go to the City&rsquo;s Open Records Officer, 313 City-County Building, 414 Grant Street, Pittsburgh, PA 15219, openrecords@pittsburghpa.gov.<sup class="fn"><a href="#src-15">15</a></sup></li>
+          <li><strong>Use the form.</strong> Use the agency&rsquo;s own request form if it has one; otherwise use the Office of Open Records&rsquo; <a href="https://www.openrecords.pa.gov/Documents/RTKL/RTKRequestForm.pdf" target="_blank" rel="noopener">standard form</a>.<sup class="fn"><a href="#src-11">11</a></sup> The City uses the standard form and says it may deny a request that arrives without it.<sup class="fn"><a href="#src-15">15</a></sup> Paste the text above into the form&rsquo;s description of the records requested.</li>
+          <li><strong>Give your name and a street address.</strong> The City says it refuses anonymous requests, treats an email without a proper name or street address as anonymous, and does not accept P.O. boxes.<sup class="fn"><a href="#src-15">15</a></sup> You do not need to say why you want the records.<sup class="fn"><a href="#src-12">12</a></sup></li>
+          <li><strong>Send it and keep a copy.</strong> You can send a request by email, fax, U.S. mail or in person, addressed to the Open Records Officer. Keep a copy: without one, an appeal can be dismissed.<sup class="fn"><a href="#src-11">11</a></sup></li>
+          <li><strong>Fees.</strong> Filing a request is free, but you may have to pay fees before you receive records.<sup class="fn"><a href="#src-11">11</a></sup></li>
+          <li><strong>The City&rsquo;s response.</strong> The City responds within five business days, and meets that duty by mailing its response on the fifth business day.<sup class="fn"><a href="#src-16">16</a></sup></li>
+          <li><strong>Who can file.</strong> The law defines a requester as a legal resident of the United States.<sup class="fn"><a href="#src-12">12</a></sup></li>
+        </ol>
+        <p>Then see <a href="../take-action.html#after-filing">what happens after you file</a>, including deadlines and how to appeal.</p>
+      </section>
+    </div>
+
+    <section class="container sources" id="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources</h2>
+      <p class="note">Official sources only. Rules and contact details can change, so check the linked page before you act. This page is information, not legal advice.</p>
+      <ol id="sources-list" class="sources-list" data-source-ids="11,12,15,16"></ol>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module">
+    import { renderLayout } from '../assets/js/layout.js';
+    import { renderActionSources } from '../assets/js/sourcesList.js';
+    import { initRtkTool } from '../assets/js/toolsUi.js';
+    renderLayout(document, '/take-action.html', '../');
+    renderActionSources();
+    initRtkTool();
+  </script>
+</body>
+</html>

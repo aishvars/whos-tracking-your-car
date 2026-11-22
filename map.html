@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Map | Who's Tracking Your Car?</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/map.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main" class="map-layout">
+    <aside class="panel" aria-label="Map controls">
+      <p class="eyebrow">Map</p>
+      <h1>Where the cameras are</h1>
+      <span class="stat" id="headline-count">&ndash;</span>
+      <span class="stat-label">ALPR cameras mapped in and around Pittsburgh</span>
+      <p class="panel-meta" id="pulled-date"></p>
+
+      <details class="panel-box">
+        <summary><h2 id="address-heading">Cameras near an address</h2><span class="box-chip" id="chip-address" hidden>Active</span></summary>
+        <div class="panel-box-body">
+        <form id="address-form" role="search" class="address-form">
+          <label for="address-input" class="visually-hidden">Address or neighborhood</label>
+          <input id="address-input" type="search" name="address" placeholder="e.g. 5000 Forbes Ave, or Oakland" autocomplete="off">
+          <button type="submit" class="btn btn-small" id="address-submit">Search</button>
+        </form>
+        <p id="address-status" class="address-status" aria-live="polite"></p>
+        <div id="address-breakdown-box" class="breakdown-box" hidden>
+          <p class="breakdown-title">Vendors in this area</p>
+          <p class="hint">Untick a vendor to hide its cameras in this area only.</p>
+          <ul id="address-breakdown" class="breakdown"></ul>
+        </div>
+        <button type="button" class="btn btn-secondary btn-small" id="address-clear" hidden>Clear search</button>
+        <p class="note">Counts mapped cameras only, within half a mile (0.8 km). OpenStreetMap may be missing some.</p>
+        </div>
+      </details>
+
+      <details class="panel-box">
+        <summary><h2 id="sensitive-heading">Cameras near sensitive places</h2><span class="box-chip" id="chip-sensitive" hidden>On</span></summary>
+        <div class="panel-box-body">
+        <label class="toggle-row">
+          <input type="checkbox" id="sensitive-toggle">
+          <span>Highlight cameras within 100&nbsp;m of a place of worship, medical facility or school</span>
+        </label>
+        <ul id="sensitive-kinds" class="kind-list" hidden>
+          <li><label><input type="checkbox" data-kind="worship" checked><span class="place-key place-worship"><span>&#10022;</span></span><span class="kind-name">Places of worship</span><span class="legend-count" data-count="worship"></span></label></li>
+          <li><label><input type="checkbox" data-kind="clinic" checked><span class="place-key place-clinic"><span>&#10010;</span></span><span class="kind-name">Medical facilities</span><span class="legend-count" data-count="clinic"></span></label></li>
+          <li><label><input type="checkbox" data-kind="school" checked><span class="place-key place-school"><span>&#9650;</span></span><span class="kind-name">Schools</span><span class="legend-count" data-count="school"></span></label></li>
+        </ul>
+        <p id="sensitive-summary" class="sensitive-summary" aria-live="polite"></p>
+        <p class="note">Numbers are cameras near each kind of place. Only places mapped in OpenStreetMap are counted, and being near a place does not mean a camera targets it.</p>
+        </div>
+      </details>
+
+      <details class="panel-box">
+        <summary><h2 id="route-heading">Follow a trip</h2><span class="box-chip" id="chip-route" hidden>Active</span></summary>
+        <div class="panel-box-body">
+        <p class="hint">Enter a start and a destination to see which mapped cameras record that drive.</p>
+        <form id="route-form" class="route-form">
+          <label for="route-from">From</label>
+          <input id="route-from" type="search" placeholder="e.g. Squirrel Hill" autocomplete="off">
+          <label for="route-to">To</label>
+          <input id="route-to" type="search" placeholder="e.g. UPMC Presbyterian" autocomplete="off">
+          <button type="submit" class="btn btn-small" id="route-find">Find route</button>
+        </form>
+        <div class="route-controls">
+          <button type="button" class="btn btn-small" id="route-play" disabled>Play</button>
+          <button type="button" class="btn btn-secondary btn-small" id="route-reset" disabled>Reset</button>
+        </div>
+        <ol id="route-log" class="route-log" aria-live="polite"></ol>
+        <p id="route-summary" class="route-summary" aria-live="polite"></p>
+        <p class="note">Driving routes come from the public OSRM service. A sighting is a mapped camera within 30&nbsp;m of the route; cameras missing from OpenStreetMap are not counted.</p>
+        </div>
+      </details>
+
+      <details class="panel-box">
+        <summary><h2 id="vendor-heading">Cameras by vendor</h2><span class="box-chip" id="chip-vendor" hidden></span></summary>
+        <div class="panel-box-body">
+        <p class="hint">Color shows who makes the camera. Uncheck a vendor to hide it.</p>
+        <div class="legend-actions">
+          <button type="button" class="btn btn-secondary btn-small" id="show-all">Show all</button>
+          <button type="button" class="btn btn-secondary btn-small" id="hide-all">Hide all</button>
+        </div>
+        <ul id="legend"></ul>
+        <p id="visible-count" aria-live="polite"></p>
+        </div>
+      </details>
+
+      <p id="tile-note" class="note warn" hidden>The map background could not load (no internet?). Camera markers are still shown.</p>
+      <p class="note">Camera locations come from OpenStreetMap contributors, crowdsourced with the DeFlock project. The map is incomplete: cameras nobody has reported are missing. <a href="about.html">About the data</a></p>
+    </aside>
+    <div id="map" role="region" aria-label="Map of ALPR cameras in and around Pittsburgh"></div>
+  </main>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script type="module">
+    import { renderLayout } from './assets/js/layout.js';
+    import { initMap } from './assets/js/map.js';
+    renderLayout(document);
+    initMap().catch((err) => console.error(err));
+  </script>
+</body>
+</html>

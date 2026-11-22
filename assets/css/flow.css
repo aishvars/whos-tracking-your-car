@@ -1,0 +1,69 @@
+.flow-hero { padding-block: 1.75rem 0.5rem; }
+.flow-hero h1 { margin-bottom: 0.5rem; }
+.flow-hero .lead { margin-bottom: 1rem; }
+
+.flow { display: grid; grid-template-columns: minmax(300px, 420px) minmax(0, 1fr); gap: 3.5rem; align-items: start; }
+
+/* Sticky diagram on the left stays in view while the steps scroll past. */
+.flow-diagram { position: sticky; top: 84px; align-self: start; }
+.diagram-step { margin: 0 0 0.5rem; color: var(--accent); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.diagram { width: 100%; height: clamp(380px, calc(100vh - 330px), 640px); display: block; }
+
+.diagram .node-box { fill: var(--surface); stroke: var(--border); stroke-width: 2; transition: stroke 0.3s, fill 0.3s; }
+.diagram .node .icon { fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.3s; }
+.diagram .node .icon .dot { fill: var(--muted); stroke: none; }
+.diagram .node .icon .dashed { stroke-dasharray: 3 4; }
+.diagram .node-title { fill: var(--text); font: 700 22px var(--font-body); }
+.diagram .node-sub { fill: var(--muted); font: 400 17px var(--font-body); }
+
+.diagram .node[data-state="done"] .node-box { stroke: rgba(245, 179, 1, 0.5); }
+.diagram .node[data-state="done"] .icon { stroke: rgba(245, 179, 1, 0.75); }
+.diagram .node[data-state="active"] .node-box { stroke: var(--accent); fill: var(--surface-2); filter: drop-shadow(0 0 10px rgba(245, 179, 1, 0.45)); }
+.diagram .node[data-state="active"] .icon { stroke: var(--accent); }
+.diagram .node[data-state="active"] .icon .dot { fill: var(--accent); }
+
+.diagram .link line { stroke: var(--border); stroke-width: 2; }
+.diagram .arrow-fill { fill: var(--border); }
+.diagram .packet { fill: var(--accent); opacity: 0; }
+.diagram .link.is-flowing line { stroke: var(--accent); }
+.diagram .link.is-flowing .packet { animation: packet-drop 1.4s ease-in-out infinite; }
+@keyframes packet-drop {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(34px); opacity: 0; }
+}
+
+.step { min-height: 72vh; padding: 2rem 0 3rem 1.75rem; border-left: 3px solid transparent; transition: border-color 0.3s, opacity 0.3s; }
+.flow.is-enhanced .step { opacity: 0.85; }
+.flow.is-enhanced .step.is-active { opacity: 1; border-left-color: var(--accent); }
+.step:last-child { min-height: 60vh; }
+.step-kicker { margin: 0 0 0.5rem; color: var(--accent); font-weight: 700; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.12em; }
+.step h2 { margin-bottom: 1rem; }
+.step p { max-width: 40rem; }
+.step .callout p { margin: 0.25rem 0 0; }
+.step .callout p + p { margin-top: 0.75rem; }
+
+.ask-line, .ask-note { margin-top: 1.25rem; }
+.ask-label { display: block; margin-bottom: 0.4rem; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.ask-note .ask-label { display: inline; margin-right: 0.5rem; }
+.ask-chip {
+  display: block; max-width: 40rem; margin: 0 0 0.5rem; padding: 0.6rem 0.9rem;
+  color: var(--text); text-decoration: none; line-height: 1.45;
+  background: rgba(245, 179, 1, 0.08); border: 1px solid var(--accent); border-radius: 8px;
+}
+.ask-chip:hover { background: rgba(245, 179, 1, 0.18); }
+.ask-chip strong { color: var(--accent); margin-right: 0.35rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .diagram .link.is-flowing .packet { animation: none; opacity: 0; }
+  .diagram .node-box, .diagram .node .icon, .step { transition: none; }
+  .flow.is-enhanced .step { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .flow { grid-template-columns: 1fr; gap: 1rem; }
+  .flow-diagram { position: static; }
+  .diagram { height: 380px; }
+  .step { min-height: 0; padding-left: 1rem; }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find your state legislators | Who's Tracking Your Car?</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/actions.css">
+  <link rel="stylesheet" href="../assets/css/citations.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <header class="container action-hero page-narrow">
+      <p class="eyebrow"><a href="../take-action.html">Take action</a> / Tool</p>
+      <h1>Find your state legislators</h1>
+      <p class="lead">Use the General Assembly&rsquo;s official lookup. This site never sees the address you type there.</p>
+    </header>
+
+    <div class="container page-narrow">
+      <ol class="steps-list">
+        <li>Open the official lookup. It opens in a new tab on palegis.us.<sup class="fn"><a href="#src-14">14</a></sup>
+          <div class="btn-row" style="margin-top:0.6rem"><a class="btn" href="https://www.palegis.us/find-my-legislator" target="_blank" rel="noopener">Open Find My Legislator</a></div></li>
+        <li>Enter the street address, city and ZIP code of where you live. Only Pennsylvania addresses can be searched.<sup class="fn"><a href="#src-14">14</a></sup></li>
+        <li>The results name the Pennsylvania House member and the Pennsylvania Senator for that address, and also list your U.S. House member and U.S. senators.<sup class="fn"><a href="#src-14">14</a></sup> Our campaign is about state law, so the first two are the people to write to.</li>
+        <li>Write to them with our letter tool.
+          <div class="btn-row" style="margin-top:0.6rem"><a class="btn btn-secondary" href="letter.html">Write a letter</a></div></li>
+      </ol>
+    </div>
+
+    <section class="container page-narrow sources" id="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Source</h2>
+      <ol id="sources-list" class="sources-list" data-source-ids="14"></ol>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module">
+    import { renderLayout } from '../assets/js/layout.js';
+    import { renderActionSources } from '../assets/js/sourcesList.js';
+    renderLayout(document, '/take-action.html', '../');
+    renderActionSources();
+  </script>
+</body>
+</html>

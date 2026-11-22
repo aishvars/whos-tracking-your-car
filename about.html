@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About and sources | Who's Tracking Your Car?</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/citations.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <header class="container home-hero about-hero">
+      <p class="eyebrow">About</p>
+      <h1>About This Site And Its Sources</h1>
+      <p class="lead">What the map shows, where its data comes from, what it cannot tell you, and how we checked the facts on every page.</p>
+      <ul class="toc-grid">
+        <li><a class="toc-tile" href="#method"><span class="toc-num" aria-hidden="true">01</span><span class="toc-title">How The Map Is Built</span><span class="toc-desc">Where the data comes from and how we process it</span></a></li>
+        <li><a class="toc-tile" href="#limits"><span class="toc-num" aria-hidden="true">02</span><span class="toc-title">Limits</span><span class="toc-desc">What the map cannot tell you</span></a></li>
+        <li><a class="toc-tile" href="#credits"><span class="toc-num" aria-hidden="true">03</span><span class="toc-title">Credits</span><span class="toc-desc">The open data and tools we build on</span></a></li>
+        <li><a class="toc-tile" href="#legal"><span class="toc-num" aria-hidden="true">04</span><span class="toc-title">Legal Background</span><span class="toc-desc">The court case and the bills behind the argument</span></a></li>
+        <li><a class="toc-tile" href="#fact-check"><span class="toc-num" aria-hidden="true">05</span><span class="toc-title">Figures We Checked</span><span class="toc-desc">What we verified, and what changed</span></a></li>
+        <li><a class="toc-tile" href="#sources"><span class="toc-num" aria-hidden="true">06</span><span class="toc-title">All Sources</span><span class="toc-desc">Every source, labelled by kind</span></a></li>
+      </ul>
+    </header>
+
+    <div class="container">
+      <section class="card about-section" id="method" aria-labelledby="method-title">
+        <h2 id="method-title">How Is The Map Built?</h2>
+        <p>This site is a student advocacy project for a graduate course on law, ethics and emerging technology policy at Carnegie Mellon University. It argues for one policy position, set out on the <a href="index.html#asks">Home page</a>, and says so plainly.</p>
+        <ul>
+          <li><strong>Cameras.</strong> Locations come from OpenStreetMap, where volunteers tag each camera <code>surveillance:type=ALPR</code>. We query every such point inside the box with corners 40.19, -80.52 to 40.67, -79.69 (south, west to north, east). The box covers Allegheny County and parts of the counties around it. <span data-own-data>The latest pull was on <span id="about-date">the latest data date</span> and found <span id="about-count">&ndash;</span> cameras.</span></li>
+          <li><strong>Vendors.</strong> Each camera&rsquo;s vendor is its OpenStreetMap manufacturer tag. We merge different spellings of the same company (for example &ldquo;PlateSmart/CyclopsTchnlgs&rdquo; and &ldquo;CyclopsTechnologies&rdquo; become &ldquo;PlateSmart / Cyclops&rdquo;), and cameras with no manufacturer tag are shown as &ldquo;Unknown.&rdquo;</li>
+          <li><strong>Sensitive places.</strong> Churches and other places of worship, clinics, hospitals, doctors&rsquo; offices and schools also come from OpenStreetMap. A camera is flagged when one is within 100 metres.</li>
+          <li><strong>Address search, trips and the basemap.</strong> Addresses are looked up with Nominatim, driving routes come from the public OSRM server, and the map tiles are OpenStreetMap&rsquo;s own.</li>
+          <li><strong>Your privacy.</strong> This site does not collect or store anything you type, and it has no accounts or analytics. When you search an address or plan a trip, your browser sends the place names directly to Nominatim and OSRM, which handle them under their own policies.</li>
+        </ul>
+      </section>
+
+      <section class="card about-section" id="limits" aria-labelledby="limits-title">
+        <h2 id="limits-title">What Can&rsquo;t The Map Tell You?</h2>
+        <ul>
+          <li><strong>It is incomplete.</strong> Cameras appear only if a volunteer has mapped them. Finding Flock, which counts cameras from the same OpenStreetMap volunteer data, says &ldquo;an undercount is always more likely than an overcount.&rdquo;<sup class="fn"><a href="#src-22">22</a></sup></li>
+          <li><strong>It is not a county count.</strong> Our box is larger than Allegheny County. Published counts for the county differ: 509 according to TribLive, citing Finding Flock in September 2026,<sup class="fn"><a href="#src-22">22</a></sup> and 827 according to The Conversation in November 2026.<sup class="fn"><a href="#src-23">23</a></sup> We have not reconciled them, so the Home page states only that the county ranks first in Pennsylvania.</li>
+          <li><strong>It is a snapshot.</strong> The data is a dated pull, shown on the Home page and the map. New cameras are mapped all the time.</li>
+          <li><strong>Many vendors are unknown.</strong> Cameras without a manufacturer tag are labelled &ldquo;Unknown.&rdquo; Vendor shares on the Home page describe mapped cameras only.</li>
+          <li><strong>A camera on the map is not proof of practice.</strong> The map does not show who runs a camera, how long its data is kept, who can search it or who it is shared with. For that, <a href="tools/rtk.html">ask the agency</a>.</li>
+          <li><strong>Nearby is not targeted.</strong> A camera within 100 metres of a church, clinic or school does not mean it was placed there for that reason, and only places mapped in OpenStreetMap are counted.</li>
+          <li><strong>Trips are illustrations.</strong> A route is computed by the public OSRM server, and a &ldquo;sighting&rdquo; is any mapped camera within 30 metres of it, which can include cameras on cross streets or facing the opposite direction. It shows how a trip could be recorded, not that it was.</li>
+        </ul>
+      </section>
+
+      <section class="card about-section" id="credits" aria-labelledby="credits-title">
+        <h2 id="credits-title">Credits</h2>
+        <ul>
+          <li><strong>OpenStreetMap.</strong> Map data &copy; OpenStreetMap contributors, available under the Open Database License (ODbL). OpenStreetMap says you may copy, distribute and adapt its data as long as you credit OpenStreetMap and its contributors.<sup class="fn"><a href="#src-28">28</a></sup></li>
+          <li><strong>DeFlock.</strong> An open-source project that maps license plate readers and, like this site, builds on OpenStreetMap data.<sup class="fn"><a href="#src-29">29</a></sup> Its map at <a href="https://maps.deflock.org/" target="_blank" rel="noopener">maps.deflock.org</a> inspired this one. DeFlock is an advocacy project, and we use it as a pointer, not as a source of facts.</li>
+          <li><strong>Software.</strong> Maps are drawn with <a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a>. Addresses are looked up with <a href="https://nominatim.org/" target="_blank" rel="noopener">Nominatim</a> and routes come from <a href="https://project-osrm.org/" target="_blank" rel="noopener">OSRM</a>.</li>
+        </ul>
+      </section>
+
+      <section class="card about-section" id="legal" aria-labelledby="legal-title">
+        <h2 id="legal-title">Legal Background</h2>
+        <p>This is information, not legal advice.</p>
+        <ul>
+          <li><strong>The Fourth Amendment and Carpenter.</strong> In <em>Carpenter v. United States</em> (2018), the Supreme Court held that accessing seven days of a person&rsquo;s cell-site location records is a Fourth Amendment search, because people keep a legitimate expectation of privacy in the record of their physical movements.<sup class="fn"><a href="#src-27">27</a></sup> The Court called its decision narrow and said it did not call into question &ldquo;conventional surveillance techniques and tools, such as security cameras.&rdquo;<sup class="fn"><a href="#src-27">27</a></sup> So <em>Carpenter</em> is not a ruling on license plate readers. It is the closest Supreme Court precedent on location history, and our argument builds on its reasoning.</li>
+          <li><strong>Federal bill.</strong> The &ldquo;Ban Flock Act,&rdquo; H.R. 10691, was introduced in the House on October 1, 2026 and referred to committees. It has not become law.<sup class="fn"><a href="#src-25">25</a></sup></li>
+          <li><strong>Pennsylvania bills.</strong> On the General Assembly&rsquo;s own bill page, House Bill 2771 shows a House vote of 190 to 13 on October 19, 2026, and a last action of referral to a Senate committee on October 26, 2026.<sup class="fn"><a href="#src-26">26</a></sup> Check that page for anything later.</li>
+          <li><strong>A patchwork of states.</strong> According to Finding Flock, 19 states have laws specifically about ALPRs, and Pennsylvania is not one of them.<sup class="fn"><a href="#src-22">22</a></sup></li>
+          <li><strong>Getting records.</strong> Pennsylvania&rsquo;s Right-to-Know Law is how residents ask agencies for their ALPR policies and contracts. The <a href="take-action.html#after-filing">Take action page</a> explains the steps, with official sources.</li>
+        </ul>
+      </section>
+
+      <section class="card about-section" id="fact-check" aria-labelledby="fact-check-title">
+        <h2 id="fact-check-title">Figures We Checked</h2>
+        <p>Before publishing, we checked each headline figure against the source it came from. This is what we found, including the caveats.</p>
+        <ul>
+          <li><strong>&ldquo;More than 5,000 agencies use Flock.&rdquo;</strong> This appears on Flock&rsquo;s own customer page. It is a company claim, and we found no independent count.<sup class="fn"><a href="#src-21">21</a></sup></li>
+          <li><strong>&ldquo;More than 50 communities dropped or paused Flock in 2026.&rdquo;</strong> Stateline reported this on August 14, 2026, citing the DeFlock tracker. It is one tracker&rsquo;s count on one date, so we date it and attribute it.<sup class="fn"><a href="#src-24">24</a></sup></li>
+          <li><strong>&ldquo;Allegheny County has the most ALPRs in Pennsylvania.&rdquo;</strong> Two news reports say so, and both rest on Finding Flock&rsquo;s crowdsourced data.<sup class="fn"><a href="#src-22">22</a>, <a href="#src-23">23</a></sup> They give different counts, so we state the ranking and no number.</li>
+          <li><strong>&ldquo;Congress has seen the Ban Flock Act.&rdquo;</strong> Confirmed: it is H.R. 10691, introduced October 1, 2026. It is a bill, not law.<sup class="fn"><a href="#src-25">25</a></sup></li>
+          <li><strong>&ldquo;Pennsylvania has no comprehensive ALPR law.&rdquo;</strong> Still true as far as we could find, but it needs care: the state House has passed House Bill 2771, which awaits the Senate.<sup class="fn"><a href="#src-26">26</a></sup> We checked on November 23, 2026 and recommend checking again before presenting.</li>
+          <li><strong>Where a source has a point of view.</strong> The EFF and DeFlock are advocacy groups, and Flock is a company. Wherever we use them, the text says who said it, and each source in the list below is labelled by kind.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="container sources" id="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">All Sources</h2>
+      <p class="note">Numbers match the footnotes on every page. Government sources are labelled &ldquo;Official.&rdquo; Everything else is labelled by kind so you can weigh it. Read on 2026-11-23.</p>
+      <ol id="sources-list" class="sources-list" data-source-ids="all"></ol>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module">
+    import { renderLayout } from './assets/js/layout.js';
+    import { renderSourceList } from './assets/js/sourcesList.js';
+    import { initAbout } from './assets/js/home.js';
+    import { loadJSON } from './assets/js/data.js';
+    renderLayout(document);
+    renderSourceList();
+    initAbout(loadJSON);
+  </script>
+</body>
+</html>

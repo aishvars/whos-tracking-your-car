@@ -1,0 +1,11 @@
+# Everything here stays on the local machine; only the website itself is published.
+Project details.pdf
+Project Idea.pdf
+PROGRESS.md
+docs/
+tests/
+scripts/
+.playwright-mcp/
+__pycache__/
+*.pyc
+.DS_Store

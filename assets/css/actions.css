@@ -1,0 +1,39 @@
+.page-narrow { max-width: 56rem; }
+.action-hero { padding-block: 3rem 1rem; }
+.action-hero .lead { max-width: 50rem; }
+
+.action-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-block: 1.5rem 3rem; }
+.action-card { display: flex; flex-direction: column; gap: 0.25rem; }
+.action-card h2 { font-size: 1.45rem; margin-bottom: 0.5rem; }
+.action-card p { max-width: 38rem; }
+.action-card .btn-row { margin-top: auto; padding-top: 0.75rem; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.suggest { color: var(--muted); font-size: 1rem; }
+
+.after-filing { max-width: 52rem; margin-bottom: 3rem; }
+.after-filing ol { padding-left: 1.4rem; }
+.after-filing li { margin: 0.75rem 0; }
+
+.steps-list { padding-left: 1.4rem; max-width: 46rem; }
+.steps-list li { margin: 0.9rem 0; }
+
+.tool-layout { display: grid; grid-template-columns: minmax(280px, 380px) minmax(0, 1fr); gap: 2.5rem; align-items: start; margin-block: 1.5rem 2.5rem; }
+.tool-form { display: grid; gap: 0.35rem; }
+.tool-form label { color: var(--muted); font-size: 0.95rem; margin-top: 0.6rem; }
+.tool-form input, .tool-form select {
+  min-width: 0; padding: 0.55rem 0.7rem; font: inherit; font-size: 1rem;
+  color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+}
+.tool-form .btn { margin-top: 0.9rem; justify-self: start; }
+.preview-box h2 { font-size: 1.2rem; font-family: var(--font-body); margin-bottom: 0.5rem; }
+.preview {
+  width: 100%; min-height: 26rem; padding: 1rem; resize: vertical; box-sizing: border-box;
+  font: 0.98rem/1.5 var(--font-body); color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px; white-space: pre-wrap;
+}
+.tool-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 0.75rem; }
+.tool-status { color: var(--accent); min-height: 1.5em; margin: 0.5rem 0 0; font-size: 1rem; }
+
+@media (max-width: 1000px) {
+  .action-grid, .tool-layout { grid-template-columns: 1fr; }
+}

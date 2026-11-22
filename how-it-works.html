@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How your data moves | Who's Tracking Your Car?</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/flow.css">
+  <link rel="stylesheet" href="assets/css/citations.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <header class="container flow-hero">
+      <p class="eyebrow">How it works</p>
+      <h1>How your data moves</h1>
+      <p class="lead">Follow one license plate from the moment a camera sees it. Five steps, the risks at each one, and where our four asks apply.</p>
+    </header>
+
+    <div class="container flow" id="flow">
+      <div class="flow-diagram">
+        <p class="diagram-step" id="diagram-step">Step 1 of 5</p>
+        <svg class="diagram" viewBox="0 0 420 600" role="img" aria-labelledby="diagram-title diagram-desc" preserveAspectRatio="xMidYMin meet">
+          <title id="diagram-title">How a license plate scan moves through the system</title>
+          <desc id="diagram-desc">Five stages from top to bottom: a camera captures the plate; the scan is stored in the vendor's cloud; police search it and hot lists trigger alerts; it can be shared with other agencies and states; together the scans form a travel history. The text beside the diagram describes each stage.</desc>
+          <defs>
+            <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" class="arrow-fill"/>
+            </marker>
+          </defs>
+
+          <g class="link" data-link="1"><line x1="210" y1="98" x2="210" y2="136" marker-end="url(#arrowhead)"/><circle class="packet" cx="210" cy="100" r="5"/></g>
+          <g class="link" data-link="2"><line x1="210" y1="218" x2="210" y2="256" marker-end="url(#arrowhead)"/><circle class="packet" cx="210" cy="220" r="5"/></g>
+          <g class="link" data-link="3"><line x1="210" y1="338" x2="210" y2="376" marker-end="url(#arrowhead)"/><circle class="packet" cx="210" cy="340" r="5"/></g>
+          <g class="link" data-link="4"><line x1="210" y1="458" x2="210" y2="496" marker-end="url(#arrowhead)"/><circle class="packet" cx="210" cy="460" r="5"/></g>
+
+          <g class="node" data-node="1" data-state="todo" transform="translate(30 20)">
+            <rect class="node-box" width="360" height="76" rx="14"/>
+            <g class="icon" transform="translate(22 20)"><rect x="2" y="10" width="26" height="16" rx="3"/><circle cx="15" cy="18" r="5"/><path d="M28 14h6v8h-6M10 10V6h10v4"/></g>
+            <text class="node-title" x="78" y="35">Camera captures the plate</text>
+            <text class="node-sub" x="78" y="58">plate, time and place</text>
+          </g>
+          <g class="node" data-node="2" data-state="todo" transform="translate(30 140)">
+            <rect class="node-box" width="360" height="76" rx="14"/>
+            <g class="icon" transform="translate(22 20)"><path d="M9 30h19a7 7 0 0 0 1-13.9A9 9 0 0 0 11.500 13 8.500 8.500 0 0 0 9 30z"/></g>
+            <text class="node-title" x="78" y="35">Vendor cloud stores it</text>
+            <text class="node-sub" x="78" y="58">kept for days or weeks</text>
+          </g>
+          <g class="node" data-node="3" data-state="todo" transform="translate(30 260)">
+            <rect class="node-box" width="360" height="76" rx="14"/>
+            <g class="icon" transform="translate(22 20)"><ellipse cx="18" cy="8" rx="12" ry="5"/><path d="M6 8v18c0 2.800 5.400 5 12 5s12-2.200 12-5V8M6 17c0 2.800 5.400 5 12 5s12-2.200 12-5"/></g>
+            <text class="node-title" x="78" y="35">Police search and alerts</text>
+            <text class="node-sub" x="78" y="58">hot lists and stored scans</text>
+          </g>
+          <g class="node" data-node="4" data-state="todo" transform="translate(30 380)">
+            <rect class="node-box" width="360" height="76" rx="14"/>
+            <g class="icon" transform="translate(22 20)"><rect x="1" y="1" width="12" height="12" rx="2"/><rect x="23" y="1" width="12" height="12" rx="2"/><rect x="12" y="23" width="12" height="12" rx="2"/><path d="M13 7h10M7 13l6 10M29 13l-6 10"/></g>
+            <text class="node-title" x="78" y="35">Shared with others</text>
+            <text class="node-sub" x="78" y="58">other agencies and states</text>
+          </g>
+          <g class="node" data-node="5" data-state="todo" transform="translate(30 500)">
+            <rect class="node-box" width="360" height="76" rx="14"/>
+            <g class="icon" transform="translate(22 20)"><path class="dashed" d="M3 31l9-8 8 4 9-12"/><circle cx="29" cy="12" r="6"/><circle cx="29" cy="12" r="2" class="dot"/></g>
+            <text class="node-title" x="78" y="35">A travel history</text>
+            <text class="node-sub" x="78" y="58">built without suspicion</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="flow-steps">
+        <section class="step" data-step="1" aria-labelledby="step-1-title">
+          <p class="step-kicker">Step 1 of 5</p>
+          <h2 id="step-1-title">A camera photographs every plate that passes</h2>
+          <p>Automated license plate readers (ALPRs) are cameras mounted on poles, overpasses and patrol cars. They automatically capture every license plate that comes into view, along with the location, date and time.<sup class="fn"><a href="#src-1">1</a></sup> Software reads the plate's characters from the image, and the photograph of the vehicle is kept too.<sup class="fn"><a href="#src-1">1</a>, <a href="#src-5">5</a></sup></p>
+          <p>One major vendor, Flock Safety, says its cameras collect plate images, vehicle characteristics, date and time stamps and a camera location, and that they collect no biometrics and use no facial recognition.<sup class="fn"><a href="#src-3">3</a></sup></p>
+          <div class="callout risk">
+            <strong>Risk: misreads</strong>
+            <p>The software can read a character wrong, such as a 3 for a 7 or an H for an M.<sup class="fn"><a href="#src-6">6</a></sup> In Roseville, California, police found that 1,011 of 1,427 alerts for stolen or felony-linked vehicles in 2023 and 2024 (71%) involved a misread. The police say none led to a stop or arrest, and Flock says that figure covers only those alerts, not all plate reads.<sup class="fn"><a href="#src-5">5</a></sup></p>
+          </div>
+          <p class="ask-note"><span class="ask-label">What our proposal keeps</span> Cameras and real-time alerts for stolen and wanted cars stay. The four asks change what happens to the data afterwards.</p>
+        </section>
+
+        <section class="step" data-step="2" aria-labelledby="step-2-title">
+          <p class="step-kicker">Step 2 of 5</p>
+          <h2 id="step-2-title">The scan is uploaded, stored and indexed</h2>
+          <p>Each read is uploaded to a central server.<sup class="fn"><a href="#src-1">1</a></sup> Flock says its data is encrypted on the device, in transit and when stored, and a 2022 Flock fact sheet describes storing it in the cloud.<sup class="fn"><a href="#src-3">3</a>, <a href="#src-4">4</a></sup></p>
+          <p>How long it stays is a local choice. Flock's current trust page says each customer sets its own retention period and that Flock recommends 7 days;<sup class="fn"><a href="#src-3">3</a></sup> its 2022 fact sheet described a 30-day default.<sup class="fn"><a href="#src-4">4</a></sup></p>
+          <div class="callout risk">
+            <strong>Risk: long retention</strong>
+            <p>Kept over time, scans stop being isolated sightings. They can show every time a plate passed a location, which lets someone infer where the driver likely lives or works.<sup class="fn"><a href="#src-1">1</a></sup></p>
+          </div>
+          <div class="ask-line"><span class="ask-label">Where our asks apply</span>
+            <a class="ask-chip" data-ask="1" href="index.html#ask-1"><strong>Ask 1</strong> <span class="ask-text"></span></a>
+          </div>
+        </section>
+
+        <section class="step" data-step="3" aria-labelledby="step-3-title">
+          <p class="step-kicker">Step 3 of 5</p>
+          <h2 id="step-3-title">Officers search it, and hot lists trigger alerts</h2>
+          <p>Agencies load hot lists of the plates they are looking for, such as stolen vehicles or vehicles tied to warrants. When a camera reads a plate on the list, the system alerts the officer or agency.<sup class="fn"><a href="#src-1">1</a></sup> Hot lists can also include low-level misdemeanors and traffic offenses.<sup class="fn"><a href="#src-2">2</a></sup></p>
+          <p>Officers can also search the stored scans. Flock says every search is tied to a user and logged, and that each search needs a public-safety reason that is recorded with it.<sup class="fn"><a href="#src-3">3</a></sup></p>
+          <div class="callout risk">
+            <strong>Risk: a wrong match</strong>
+            <p>In Aurora, Colorado, in August 2020, an ALPR flagged Brittney Gilliam's SUV as a stolen vehicle. The stolen vehicle was a motorcycle with Montana plates; hers had Colorado plates. Police detained her family at gunpoint and handcuffed them, including the children, and the city later settled her lawsuit for $1.9 million.<sup class="fn"><a href="#src-6">6</a></sup></p>
+          </div>
+          <div class="callout risk">
+            <strong>Risk: searches with little oversight</strong>
+            <p>EFF reported that a Johnson County official ran a search with the note "had an abortion, search for female" that covered 6,809 networks and 83,345 cameras.<sup class="fn"><a href="#src-7">7</a></sup> The Texas county's sheriff and Flock said the woman was being checked on because her family feared for her safety.<sup class="fn"><a href="#src-8">8</a></sup> EFF also reports that agencies sometimes used vague wording in the reason field for searches tied to protests.<sup class="fn"><a href="#src-7">7</a></sup></p>
+          </div>
+          <div class="ask-line"><span class="ask-label">Where our asks apply</span>
+            <a class="ask-chip" data-ask="2" href="index.html#ask-2"><strong>Ask 2</strong> <span class="ask-text"></span></a>
+            <a class="ask-chip" data-ask="4" href="index.html#ask-4"><strong>Ask 4</strong> <span class="ask-text"></span></a>
+          </div>
+        </section>
+
+        <section class="step" data-step="4" aria-labelledby="step-4-title">
+          <p class="step-kicker">Step 4 of 5</p>
+          <h2 id="step-4-title">It can be shared beyond the agency that bought it</h2>
+          <p>Customers choose their sharing settings, and Flock says nothing is shared unless they turn sharing on.<sup class="fn"><a href="#src-3">3</a></sup> But sharing can reach far: EFF reports that a single search covered 6,809 networks and 83,345 cameras across nearly the entire country.<sup class="fn"><a href="#src-7">7</a></sup></p>
+          <p>Citing audit data analyzed by 404 Media, EFF reports more than 4,000 nationwide and statewide lookups by local and state police that were done at the request of federal agencies, as informal favors, or with a possible immigration focus, although ICE had no formal agreement with Flock.<sup class="fn"><a href="#src-9">9</a></sup> In Illinois, the Secretary of State opened an audit after EFF research reported that Flock allowed U.S. Customs and Border Protection to access Illinois data in violation of state privacy laws.<sup class="fn"><a href="#src-7">7</a></sup></p>
+          <div class="callout risk">
+            <strong>Risk: over-sharing</strong>
+            <p>EFF argues that informal sharing lets federal agencies reach the network through local partnerships, without the transparency and legal limits that would apply to a direct contract.<sup class="fn"><a href="#src-9">9</a></sup></p>
+          </div>
+          <div class="ask-line"><span class="ask-label">Where our asks apply</span>
+            <a class="ask-chip" data-ask="3" href="index.html#ask-3"><strong>Ask 3</strong> <span class="ask-text"></span></a>
+          </div>
+        </section>
+
+        <section class="step" data-step="5" aria-labelledby="step-5-title">
+          <p class="step-kicker">Step 5 of 5</p>
+          <h2 id="step-5-title">It adds up to a travel history, built without suspicion</h2>
+          <p>One scan seems harmless. In aggregate, ALPR data can reveal a vehicle's historical travel and regular patterns, and with algorithms it can predict where a driver may be in the future. It also reveals everyone who visited a particular location. The data is gathered indiscriminately, on millions of ordinary people.<sup class="fn"><a href="#src-1">1</a></sup></p>
+          <p>Try it on the map: <a href="map.html">follow a trip</a> from one neighborhood to another and see how many cameras record it.</p>
+          <div class="ask-line"><span class="ask-label">All four asks work together</span>
+            <a class="ask-chip" data-ask="1" href="index.html#ask-1"><strong>Ask 1</strong> <span class="ask-text"></span></a>
+            <a class="ask-chip" data-ask="2" href="index.html#ask-2"><strong>Ask 2</strong> <span class="ask-text"></span></a>
+            <a class="ask-chip" data-ask="3" href="index.html#ask-3"><strong>Ask 3</strong> <span class="ask-text"></span></a>
+            <a class="ask-chip" data-ask="4" href="index.html#ask-4"><strong>Ask 4</strong> <span class="ask-text"></span></a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="container sources" id="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources</h2>
+      <p class="note">Many of the examples involve Flock Safety because most of the sources we found document its practices. Other vendors, including PlateSmart/Cyclops and Motorola, which also have many cameras in Pittsburgh on our map, may differ on retention and sharing. Where a company or police department disputes a claim, we say so.</p>
+      <ol id="sources-list" class="sources-list" data-source-ids="1,2,3,4,5,6,7,8,9"></ol>
+      <p class="cta-row"><a class="btn" href="map.html">See the cameras on the map</a> <a class="btn btn-secondary" href="take-action.html">What you can do</a></p>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module">
+    import { renderLayout } from './assets/js/layout.js';
+    import { initFlow } from './assets/js/flow.js';
+    renderLayout(document);
+    initFlow();
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Letter generator | Who's Tracking Your Car?</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/actions.css">
+  <link rel="stylesheet" href="../assets/css/citations.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <header class="container action-hero">
+      <p class="eyebrow"><a href="../take-action.html">Take action</a> / Tool</p>
+      <h1>Write to your state legislator</h1>
+      <p class="lead">Fill in the boxes and the letter updates as you type. It states our four asks and no facts, so add your own reasons before you send it. Everything stays in your browser: nothing you type is sent or saved.</p>
+    </header>
+
+    <div class="container">
+      <div class="tool-layout">
+        <form id="tool-form" class="tool-form" autocomplete="off">
+          <label for="l-title">Writing to</label>
+          <select id="l-title">
+            <option value="Representative">State Representative</option>
+            <option value="Senator">State Senator</option>
+          </select>
+          <label for="l-recipient">Their name</label>
+          <input id="l-recipient" type="text" placeholder="e.g. Jordan Smith">
+          <label for="l-name">Your name</label>
+          <input id="l-name" type="text" placeholder="Your full name">
+          <label for="l-address">Your address</label>
+          <input id="l-address" type="text" placeholder="Street, city, ZIP">
+          <p class="note" style="margin-top:0.9rem">Not sure who represents you? Use the official lookup.<sup class="fn"><a href="#src-14">14</a></sup> <a href="find-your-rep.html">How to find your legislators</a></p>
+        </form>
+
+        <div class="preview-box">
+          <h2 id="preview-title">Your letter</h2>
+          <textarea id="preview" class="preview" readonly aria-labelledby="preview-title"></textarea>
+          <div class="tool-actions">
+            <button type="button" class="btn" id="copy-btn">Copy letter</button>
+            <a class="btn btn-secondary" id="mail-link" href="mailto:">Open in my email program</a>
+          </div>
+          <p class="tool-status" id="tool-status" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+
+    <section class="container sources" id="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Source</h2>
+      <ol id="sources-list" class="sources-list" data-source-ids="14"></ol>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module">
+    import { renderLayout } from '../assets/js/layout.js';
+    import { renderActionSources } from '../assets/js/sourcesList.js';
+    import { initLetterTool } from '../assets/js/toolsUi.js';
+    renderLayout(document, '/take-action.html', '../');
+    renderActionSources();
+    initLetterTool();
+  </script>
+</body>
+</html>
