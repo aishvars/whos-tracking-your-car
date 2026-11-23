@@ -13,4 +13,5 @@
 .kind-official { background: var(--ok); }
 .kind-company { background: #ffd27a; }
 .kind-advocacy { background: #c7b6ff; }
+.kind-research { background: #a8d8ea; }
 .cta-row { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }

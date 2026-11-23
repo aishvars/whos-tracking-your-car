@@ -11,4 +11,5 @@ export const KIND_LABELS = {
   news: 'News report',
   advocacy: 'Advocacy group',
   data: 'Open data project',
+  research: 'Research organization',
 };
