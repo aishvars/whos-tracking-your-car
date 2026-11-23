@@ -86,10 +86,15 @@
           <p class="step-kicker">Step 2 of 5</p>
           <h2 id="step-2-title">The scan is uploaded, stored and indexed</h2>
           <p>Each read is uploaded to a central server.<sup class="fn"><a href="#src-1">1</a></sup> Flock says its data is encrypted on the device, in transit and when stored, and a 2022 Flock fact sheet describes storing it in the cloud.<sup class="fn"><a href="#src-3">3</a>, <a href="#src-4">4</a></sup></p>
-          <p>How long it stays is a local choice. Flock's current trust page says each customer sets its own retention period and that Flock recommends 7 days;<sup class="fn"><a href="#src-3">3</a></sup> its 2022 fact sheet described a 30-day default.<sup class="fn"><a href="#src-4">4</a></sup></p>
+          <p>How long it stays is a local choice, and Flock&rsquo;s position has changed. In an announcement published August 13, 2026, Flock said it was updating its recommendation and default retention period to 7 days. Existing customers keep their current periods, and every community still chooses its own.<sup class="fn"><a href="#src-30">30</a></sup> Its trust page also says each customer sets its own period,<sup class="fn"><a href="#src-3">3</a></sup> and its 2022 fact sheet described a 30-day default.<sup class="fn"><a href="#src-4">4</a></sup> Flock&rsquo;s own pages are not fully consistent: one explainer says data is deleted after 7 days by default,<sup class="fn"><a href="#src-31">31</a></sup> while another, updated in October 2026, still describes a 30-day default.<sup class="fn"><a href="#src-32">32</a></sup></p>
           <div class="callout risk">
             <strong>Risk: long retention</strong>
             <p>Kept over time, scans stop being isolated sightings. They can show every time a plate passed a location, which lets someone infer where the driver likely lives or works.<sup class="fn"><a href="#src-1">1</a></sup></p>
+          </div>
+          <div class="callout answer">
+            <strong>Flock&rsquo;s answer: Evidence Mode</strong>
+            <p>Flock says detectives will be able to preserve specific data for an active investigation in cold storage, so everything else can be deleted sooner. It says its analysis shows that over 90% of searches without a full plate are done within a week. Evidence Mode was announced as rolling out &ldquo;in the coming weeks,&rdquo; and Flock says customers who adopt the 7-day recommendation get it at no cost.<sup class="fn"><a href="#src-30">30</a></sup></p>
+            <p>That 90% figure is Flock&rsquo;s own analysis, which we could not check, and it leaves out searches by full plate.<sup class="fn"><a href="#src-30">30</a></sup> A 7-day default is a company setting that can change, it leaves existing customers&rsquo; periods as they are, and it covers only one vendor. It is not a law. Our first ask has the same exception for an active case, and would write it into law, including who decides what counts as one.</p>
           </div>
           <div class="ask-line"><span class="ask-label">Where our asks apply</span>
             <a class="ask-chip" data-ask="1" href="index.html#ask-1"><strong>Ask 1</strong> <span class="ask-text"></span></a>
@@ -101,6 +106,7 @@
           <h2 id="step-3-title">Officers search it, and hot lists trigger alerts</h2>
           <p>Agencies load hot lists of the plates they are looking for, such as stolen vehicles or vehicles tied to warrants. When a camera reads a plate on the list, the system alerts the officer or agency.<sup class="fn"><a href="#src-1">1</a></sup> Hot lists can also include low-level misdemeanors and traffic offenses.<sup class="fn"><a href="#src-2">2</a></sup></p>
           <p>Officers can also search the stored scans. Flock says every search is tied to a user and logged, and that each search needs a public-safety reason that is recorded with it.<sup class="fn"><a href="#src-3">3</a></sup></p>
+          <p>Flock announced that it will require case codes for all law-enforcement searches by the end of 2026, with a bypass in emergencies; each emergency search will be flagged for administrator review. It also said all law-enforcement customers must use Audit Assistance, which flags abnormal activity for review, by the same date.<sup class="fn"><a href="#src-30">30</a></sup> These are announced company policies, not legal requirements.</p>
           <div class="callout risk">
             <strong>Risk: a wrong match</strong>
             <p>In Aurora, Colorado, in August 2020, an ALPR flagged Brittney Gilliam's SUV as a stolen vehicle. The stolen vehicle was a motorcycle with Montana plates; hers had Colorado plates. Police detained her family at gunpoint and handcuffed them, including the children, and the city later settled her lawsuit for $1.9 million.<sup class="fn"><a href="#src-6">6</a></sup></p>
@@ -119,6 +125,7 @@
           <p class="step-kicker">Step 4 of 5</p>
           <h2 id="step-4-title">It can be shared beyond the agency that bought it</h2>
           <p>Customers choose their sharing settings, and Flock says nothing is shared unless they turn sharing on.<sup class="fn"><a href="#src-3">3</a></sup> But sharing can reach far: EFF reports that a single search covered 6,809 networks and 83,345 cameras across nearly the entire country.<sup class="fn"><a href="#src-7">7</a></sup></p>
+          <p>Flock also announced &ldquo;offense filtering for sharing,&rdquo; which lets a city choose which types of offense other agencies may search its cameras for. Its example allows stolen-vehicle, missing-person or violent-crime searches while blocking immigration-enforcement searches.<sup class="fn"><a href="#src-30">30</a></sup> It is opt-in, and the announcement does not say it requires a warrant or bars sharing outside Pennsylvania. Flock says all sharing is off by default and can only be started by the customer.<sup class="fn"><a href="#src-33">33</a></sup></p>
           <p>Citing audit data analyzed by 404 Media, EFF reports more than 4,000 nationwide and statewide lookups by local and state police that were done at the request of federal agencies, as informal favors, or with a possible immigration focus, although ICE had no formal agreement with Flock.<sup class="fn"><a href="#src-9">9</a></sup> In Illinois, the Secretary of State opened an audit after EFF research reported that Flock allowed U.S. Customs and Border Protection to access Illinois data in violation of state privacy laws.<sup class="fn"><a href="#src-7">7</a></sup></p>
           <div class="callout risk">
             <strong>Risk: over-sharing</strong>
@@ -133,6 +140,10 @@
           <p class="step-kicker">Step 5 of 5</p>
           <h2 id="step-5-title">It adds up to a travel history, built without suspicion</h2>
           <p>One scan seems harmless. In aggregate, ALPR data can reveal a vehicle's historical travel and regular patterns, and with algorithms it can predict where a driver may be in the future. It also reveals everyone who visited a particular location. The data is gathered indiscriminately, on millions of ordinary people.<sup class="fn"><a href="#src-1">1</a></sup></p>
+          <div class="callout answer">
+            <strong>Flock&rsquo;s answer: it is not tracking</strong>
+            <p>Flock says its cameras &ldquo;take a point-in-time image of the rear of vehicles on public roadways&rdquo; and cannot track anyone&rsquo;s movements.<sup class="fn"><a href="#src-32">32</a></sup> Its own explainer, though, says each read is saved with a time and location &ldquo;so the detection can be searched, mapped, reviewed, or connected to a reported incident.&rdquo;<sup class="fn"><a href="#src-31">31</a></sup> Whether many such points add up to a travel history is the aggregation question we explain in the <a href="about.html#legal">legal background</a>.</p>
+          </div>
           <p>Try it on the map: <a href="map.html">follow a trip</a> from one neighborhood to another and see how many cameras record it.</p>
           <div class="ask-line"><span class="ask-label">All four asks work together</span>
             <a class="ask-chip" data-ask="1" href="index.html#ask-1"><strong>Ask 1</strong> <span class="ask-text"></span></a>
@@ -147,7 +158,7 @@
     <section class="container sources" id="sources" aria-labelledby="sources-title">
       <h2 id="sources-title">Sources</h2>
       <p class="note">Many of the examples involve Flock Safety because most of the sources we found document its practices. Other vendors, including PlateSmart/Cyclops and Motorola, which also have many cameras in Pittsburgh on our map, may differ on retention and sharing. Where a company or police department disputes a claim, we say so.</p>
-      <ol id="sources-list" class="sources-list" data-source-ids="1,2,3,4,5,6,7,8,9"></ol>
+      <ol id="sources-list" class="sources-list" data-source-ids="1,2,3,4,5,6,7,8,9,30,31,32,33"></ol>
       <p class="cta-row"><a class="btn" href="map.html">See the cameras on the map</a> <a class="btn btn-secondary" href="take-action.html">What you can do</a></p>
     </section>
   </main>

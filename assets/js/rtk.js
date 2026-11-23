@@ -10,6 +10,10 @@ export const RTK_ITEMS = [
   'Records identifying each agency or organization, inside or outside Pennsylvania, with which the agency shares ALPR data or allows access to it, including any data-sharing agreements.',
   'Any policy, audit report or summary of searches of ALPR data, including the reason recorded for searches and any requirement to record one.',
   'Any annual, periodic or public report on the agency\'s use of ALPR systems, including the number of ALPR cameras in use.',
+  'Records showing whether the agency preserves ALPR data beyond its standard retention period, for example through a vendor feature such as Flock\'s "Evidence Mode", and any policy on when, by whom and for how long data may be preserved.',
+  'Records showing any offense-based sharing settings the agency uses (sometimes called offense filtering), meaning which types of offense other agencies may search its ALPR data for.',
+  'Records showing whether the agency has published a public transparency portal for its ALPR use, including its web address.',
+  'Any policy or setting that requires a case number or case code for ALPR searches, and any policy or report on audit tools or alerts that flag unusual searches, including how flagged searches are reviewed.',
 ];
 
 const clean = (value, placeholder) => {

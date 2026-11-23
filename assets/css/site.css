@@ -106,6 +106,7 @@ main { min-height: calc(100vh - 64px - 120px); }
 
 .callout { border-left: 4px solid var(--accent); background: var(--surface); padding: 1rem 1.25rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1.25rem 0; }
 .callout.risk { border-left-color: var(--danger); }
+.callout.answer { border-left-color: var(--muted); }
 .callout strong:first-child { display: block; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
 .callout.risk strong:first-child { color: var(--danger); }
 
